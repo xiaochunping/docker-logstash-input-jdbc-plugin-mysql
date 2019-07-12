@@ -3,7 +3,7 @@
 Starting logstash input jdbc for mysql database plugin is super simple. with this command
 
 ```docker
-docker run --name logstash-name -p 9600:9600 -p 5044:5044 dimmaryanto93/logstash-input-jdbc-mysql:tag
+docker run --name logstash-name -p 9600:9600 -p 5044:5044 xiaochunping/logstash-input-jdbc-mysql:tag
 ```
 
 ## Customize configuration
@@ -79,7 +79,7 @@ services:
     depends_on: 
       - elasticsearch
   logstash:
-    image: dimmaryanto93/logstash-input-jdbc-plugin:6.6.0
+    image: xiaochunping/logstash-input-jdbc-plugin:6.6.0
     environment:
       - LOGSTASH_JDBC_URL=jdbc:mysql://mysql:3306/example?useSSL=false
       - LOGSTASH_JDBC_DRIVER=com.mysql.jdbc.Driver
