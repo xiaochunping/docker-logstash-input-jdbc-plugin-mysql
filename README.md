@@ -57,7 +57,8 @@ services:
     networks: 
       - logstash_network
   elasticsearch:
-    image: docker.elastic.co/elasticsearch/elasticsearch:6.4.0
+    #image: docker.elastic.co/elasticsearch/elasticsearch:6.4.0
+    image: elasticsearch:6.4.0
     ports:
       - 9300:9300
       - 9200:9200
@@ -71,7 +72,8 @@ services:
     networks:
       - logstash_network
   kibana:
-    image: docker.elastic.co/kibana/kibana:6.4.0
+    #image: docker.elastic.co/kibana/kibana:6.4.0
+    image: kibana:6.4.0
     ports:
       - 5601:5601
     networks:
