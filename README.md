@@ -57,7 +57,7 @@ services:
     networks: 
       - logstash_network
   elasticsearch:
-    image: docker.elastic.co/elasticsearch/elasticsearch:6.6.0
+    image: docker.elastic.co/elasticsearch/elasticsearch:6.4.0
     ports:
       - 9300:9300
       - 9200:9200
@@ -71,7 +71,7 @@ services:
     networks:
       - logstash_network
   kibana:
-    image: docker.elastic.co/kibana/kibana:6.6.0
+    image: docker.elastic.co/kibana/kibana:6.4.0
     ports:
       - 5601:5601
     networks:
@@ -79,7 +79,7 @@ services:
     depends_on: 
       - elasticsearch
   logstash:
-    image: xiaochunping/logstash-input-jdbc-plugin:6.6.0
+    image: xiaochunping/logstash-input-jdbc-mysql:6.4.0
     environment:
       - LOGSTASH_JDBC_URL=jdbc:mysql://mysql:3306/example?useSSL=false
       - LOGSTASH_JDBC_DRIVER=com.mysql.jdbc.Driver
